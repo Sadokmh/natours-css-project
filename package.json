@@ -1,0 +1,22 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Landing page ",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/styles.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sadokmh/natours-css-project.git"
+  },
+  "author": "Sadok",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sadokmh/natours-css-project/issues"
+  },
+  "homepage": "https://github.com/Sadokmh/natours-css-project#readme",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}

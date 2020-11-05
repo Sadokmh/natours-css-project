@@ -1,112 +1,151 @@
-@charset "UTF-8";
 /*
  Project colors:
     - light green #7ed56f
     - medium green #55c57a
     - dark green #28b485
 */
+
+$primary-color: #7ed56f;
+$primary-color-light: #55c57a;
+$primary-color-dark: #28b485;
+$color-gray-dark: #777;
+$color-white: #fff;
+
 *,
 *::after *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
 html {
-  font-size: 62.5%;
-  /* 100 / 10px(project default font-size) * 16px (default browser font-size) = 62.5 */ }
+  font-size: 62.5%; /* 100 / 10px(project default font-size) * 16px (default browser font-size) = 62.5 */
+}
 
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   /*font-size: 16px;*/
   line-height: 1.7;
-  color: #777;
+  color: $color-gray-dark;
   padding: 3rem;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .header {
-  height: 95vh;
-  /* 95% of the view height */
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  height: 95vh; /* 95% of the view height */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($primary-color, 0.8),
+      rgba($primary-color-dark, 0.8)
+    ),
+    url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  /* syntax polygon(x y, x y, x y, x y) */
-  position: relative; }
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75vh,
+    0 100%
+  ); /* syntax polygon(x y, x y, x y, x y) */
+  position: relative;
+}
 
 .header__logo-box {
   position: absolute;
   top: 4rem;
-  left: 4rem; }
+  left: 4rem;
+}
 
 .header__logo {
-  height: 3.5rem;
-  /* specify only the height and let the browser control the width */ }
+  height: 3.5rem; /* specify only the height and let the browser control the width */
+}
 
 .header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center; }
+  text-align: center;
+}
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   margin-bottom: 6rem;
-  backface-visibility: hidden;
-  /* to avoid animations bugs */ }
+
+  backface-visibility: hidden; /* to avoid animations bugs */
+}
 
 .heading-primary--main {
-  display: block;
-  /* to display it in an individual line, cuz span element by default is an inline element */
+  display: block; /* to display it in an individual line, cuz span element by default is an inline element */
   font-size: 6rem;
-  font-weight: 400;
-  /* the h1 by default has a higher font-weight */
+  font-weight: 400; /* the h1 by default has a higher font-weight */
   letter-spacing: 3.5rem;
+
   animation-name: moveInLeft;
   animation-duration: 1s;
   /*
    animation-delay: 3s; /* wait 3 seconds before starting the animation */
   /* animation-iteration-count: 3; /* repeat the animation for 3 times */
-  /* animation-timing-function: ease-out; /* start slowly then being fast */ }
+  /* animation-timing-function: ease-out; /* start slowly then being fast */
+}
 
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1.74rem;
+
   animation-name: moveInRight;
-  animation-duration: 1s; }
+  animation-duration: 1s;
+}
 
 /* Animation */
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-10rem); }
+    transform: translateX(-10rem);
+  }
+
   80% {
-    transform: translateX(1rem); }
+    transform: translateX(1rem);
+  }
+
   100%  {
     opacity: 1;
-    transform: translateX(0); } }
+    transform: translateX(0);
+  }
+}
 
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(10rem); }
+    transform: translateX(10rem);
+  }
+
   80% {
-    transform: translateX(-1rem); }
+    transform: translateX(-1rem);
+  }
+
   100%  {
     opacity: 1;
-    transform: translateX(0); } }
+    transform: translateX(0);
+  }
+}
 
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(3rem); }
+    transform: translateY(3rem);
+  }
+
   100%  {
     opacity: 1;
-    transform: translateX(0); } }
+    transform: translateX(0);
+  }
+}
 
 .btn {
   text-transform: uppercase;
@@ -116,46 +155,50 @@ body {
   border-radius: 10rem;
   transition: all 0.2s;
   cursor: pointer;
-  margin-top: 6rem; }
+  margin-top: 6rem;
+}
 
 .btn:hover {
   transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
 
 .btn--white {
   background-color: white;
-  color: #777;
+  color: $color-gray-dark;
   padding: 1.5rem 4rem;
   display: inline-block;
-  position: relative; }
+  position: relative;
+}
 
 .btn::after {
   /* add an element that looks exactly like the button we already have, but we put it behind the button. */
   content: "";
   display: inline-block;
-  height: 100%;
-  /* it's treated like a child of the button, so the height will be 100% of the btn height */
-  width: 100%;
-  /* `` */
+  height: 100%; /* it's treated like a child of the button, so the height will be 100% of the btn height */
+  width: 100%; /* `` */
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
   transition: all 0.4s;
-  border-radius: 10rem; }
-
+  border-radius: 10rem;
+}
 .btn--white::after {
-  background-color: #fff; }
+  background-color: #fff;
+}
 
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
+  opacity: 0;
+}
 
 .btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
-  animation-fill-mode: backwards;
-  /* doesn't apply the styles until the animation start */ }
+  animation-fill-mode: backwards; /* doesn't apply the styles until the animation start */
+}
