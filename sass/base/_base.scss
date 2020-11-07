@@ -1,0 +1,18 @@
+/* this is a partial file ( it will be imported in other sass file ) */
+/* parital files named like this: '_FILENAME.scss' */
+
+*,
+*::after *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // defines what 1 rem is => for that reason we will not put it in the typography file
+  font-size: 62.5%; /* 100 / 10px(project default font-size) * 16px (default browser font-size) = 62.5 */
+}
+
+body {
+  box-sizing: border-box;
+}

@@ -1,10 +1,8 @@
 @charset "UTF-8";
-/*
- Project colors:
-    - light green #7ed56f
-    - medium green #55c57a
-    - dark green #28b485
-*/
+/* this is a partial file ( it will be imported in other sass file ) */
+/* parital files named like this: '_FILENAME.scss' */
+/* this is a partial file ( it will be imported in other sass file ) */
+/* parital files named like this: '_FILENAME.scss' */
 *,
 *::after *::before {
   margin: 0;
@@ -16,68 +14,7 @@ html {
   /* 100 / 10px(project default font-size) * 16px (default browser font-size) = 62.5 */ }
 
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /*font-size: 16px;*/
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
   box-sizing: border-box; }
-
-.header {
-  height: 95vh;
-  /* 95% of the view height */
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  /* syntax polygon(x y, x y, x y, x y) */
-  position: relative; }
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem;
-  /* specify only the height and let the browser control the width */ }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center; }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  margin-bottom: 6rem;
-  backface-visibility: hidden;
-  /* to avoid animations bugs */ }
-
-.heading-primary--main {
-  display: block;
-  /* to display it in an individual line, cuz span element by default is an inline element */
-  font-size: 6rem;
-  font-weight: 400;
-  /* the h1 by default has a higher font-weight */
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  /*
-   animation-delay: 3s; /* wait 3 seconds before starting the animation */
-  /* animation-iteration-count: 3; /* repeat the animation for 3 times */
-  /* animation-timing-function: ease-out; /* start slowly then being fast */ }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.74rem;
-  animation-name: moveInRight;
-  animation-duration: 1s; }
 
 /* Animation */
 @keyframes moveInLeft {
@@ -108,6 +45,43 @@ body {
     opacity: 1;
     transform: translateX(0); } }
 
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+  backface-visibility: hidden;
+  /* to avoid animations bugs */ }
+  .heading-primary--main {
+    display: block;
+    /* to display it in an individual line, cuz span element by default is an inline element */
+    font-size: 6rem;
+    font-weight: 400;
+    /* the h1 by default has a higher font-weight */
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    /*
+       animation-delay: 3s; /* wait 3 seconds before starting the animation */
+    /* animation-iteration-count: 3; /* repeat the animation for 3 times */
+    /* animation-timing-function: ease-out; /* start slowly then being fast */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.74rem;
+    animation-name: moveInRight;
+    animation-duration: 1s; }
+
+/* this is a partial file ( it will be imported in other sass file ) */
+/* parital files named like this: '_FILENAME.scss' */
 .btn {
   text-transform: uppercase;
   text-decoration: none;
@@ -117,45 +91,99 @@ body {
   transition: all 0.2s;
   cursor: pointer;
   margin-top: 6rem; }
+  .btn:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: #fff;
+    color: #777;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    position: relative; }
+    .btn--white::after {
+      background-color: #fff; }
+  .btn::after {
+    /* add an element that looks exactly like the button we already have, but we put it behind the button. */
+    content: "";
+    display: inline-block;
+    height: 100%;
+    /* it's treated like a child of the button, so the height will be 100% of the btn height */
+    width: 100%;
+    /* `` */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+    border-radius: 10rem; }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+  .btn--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+    /* doesn't apply the styles until the animation start */ }
 
-.btn:hover {
-  transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-
-.btn--white {
-  background-color: white;
-  color: #777;
-  padding: 1.5rem 4rem;
-  display: inline-block;
+/* this is a partial file ( it will be imported in other sass file ) */
+/* parital files named like this: '_FILENAME.scss' */
+.header {
+  height: 95vh;
+  /* 95% of the view height */
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* syntax polygon(x y, x y, x y, x y) */
   position: relative; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem;
+    /* specify only the height and let the browser control the width */ }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
 
-.btn::after {
-  /* add an element that looks exactly like the button we already have, but we put it behind the button. */
-  content: "";
-  display: inline-block;
-  height: 100%;
-  /* it's treated like a child of the button, so the height will be 100% of the btn height */
-  width: 100%;
-  /* `` */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s;
-  border-radius: 10rem; }
+.row {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2);
+    background-color: orangered; }
+  .row .col-1-of-3 {
+    width: calc((100% - (2 * 6rem)) / 3);
+    background-color: orchid; }
+  .row .col-2-of-3 {
+    width: calc(((100% - 6rem) / 3) * 2);
+    background-color: #6d0069; }
+  .row .col-1-of-4 {
+    width: calc((100% - (3 * 6rem)) / 4);
+    background-color: #b3c000; }
+  .row .col-2-of-4 {
+    width: calc(((100% - (2 * 6rem)) / 4) * 2);
+    background-color: #007022; }
+  .row .col-3-of-4 {
+    width: calc(((100% - 6rem) / 4) * 3);
+    background-color: #006242; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
 
-.btn--white::after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
-
-.btn--animated {
-  animation: moveInBottom 0.5s ease-out 0.75s;
-  animation-fill-mode: backwards;
-  /* doesn't apply the styles until the animation start */ }
+/* this is a partial file ( it will be imported in other sass file ) */
+/* parital files named like this: '_FILENAME.scss' */

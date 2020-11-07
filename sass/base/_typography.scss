@@ -1,0 +1,40 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  color: $color-gray-dark;
+  padding: 3rem;
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+
+  backface-visibility: hidden; /* to avoid animations bugs */
+
+  &--main {
+    display: block; /* to display it in an individual line, cuz span element by default is an inline element */
+    font-size: 6rem;
+    font-weight: 400; /* the h1 by default has a higher font-weight */
+    letter-spacing: 3.5rem;
+
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    /*
+       animation-delay: 3s; /* wait 3 seconds before starting the animation */
+    /* animation-iteration-count: 3; /* repeat the animation for 3 times */
+    /* animation-timing-function: ease-out; /* start slowly then being fast */
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.74rem;
+
+    animation-name: moveInRight;
+    animation-duration: 1s;
+  }
+}
