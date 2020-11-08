@@ -1,2 +1,8 @@
 /* this is a partial file ( it will be imported in other sass file ) */
 /* parital files named like this: '_FILENAME.scss' */
+
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  margin-top: -20vh; // 20 cuz: in the header we have: height 95vg & polygon with 75vh => 95 - 75 = 20
+}
