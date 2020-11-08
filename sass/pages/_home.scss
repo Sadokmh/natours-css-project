@@ -6,3 +6,20 @@
   padding: 25rem 0;
   margin-top: -20vh; // 20 cuz: in the header we have: height 95vg & polygon with 75vh => 95 - 75 = 20
 }
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($primary-color, 0.8),
+      rgba($primary-color-dark, 0.8)
+    ),
+    url(../img/nat-4.jpg);
+  background-size: cover;
+  transform: skewY(-7deg); // skew the entire section
+  margin-top: -13rem;
+  & > * {
+    // select all its childs and cancel the skew on them
+    transform: skewY(7deg);
+  }
+}
