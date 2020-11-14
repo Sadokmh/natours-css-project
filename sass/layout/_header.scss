@@ -5,10 +5,10 @@
   height: 95vh; /* 95% of the view height */
   background-image: linear-gradient(
       to right bottom,
-      rgba($primary-color, 0.8),
-      rgba($primary-color-dark, 0.8)
+      rgba($primary-color, 0.9),
+      rgba($primary-color-dark, 0.9)
     ),
-    url(../img/hero.jpg);
+    url(../img/main3.jpeg);
   background-size: cover;
   background-position: top;
   clip-path: polygon(

@@ -14,7 +14,7 @@
       rgba($primary-color, 0.8),
       rgba($primary-color-dark, 0.8)
     ),
-    url(../img/nat-4.jpg);
+    url(../img/main2.jpg);
   background-size: cover;
   transform: skewY(-7deg); // skew the entire section
   margin-top: -13rem;
@@ -22,4 +22,10 @@
     // select all its childs and cancel the skew on them
     transform: skewY(7deg);
   }
+}
+
+.section-tours {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0 15rem 0;
+  margin-top: -10rem;
 }

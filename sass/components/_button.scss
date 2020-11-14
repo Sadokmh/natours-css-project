@@ -33,6 +33,18 @@
     }
   }
 
+  &--green {
+    background-color: $primary-color;
+    color: $color-white;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      background-color: $primary-color;
+    }
+  }
+
   &::after {
     /* add an element that looks exactly like the button we already have, but we put it behind the button. */
     content: "";
